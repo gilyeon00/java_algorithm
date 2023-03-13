@@ -19,8 +19,9 @@ public class QuickSort {
         quickSort(center + 1, right);
     }
 
+    // 배열에서 left부터 right까지 pivot을 기준으로 나누는 함수
     private static int partition(int left, int right) {
-        int pivot = left++;
+        int pivot = left++;     // 왼쪽을 pivot으로 설정
 
         while(left < right){
             while(left<right && arr[left] <= arr[pivot])  left++;
@@ -29,6 +30,7 @@ public class QuickSort {
             if (left < right) swap(left,right);
         }
 
+        // while 종료 후 항상 left == right
         if (arr[left] < arr[pivot]){
             swap(left, pivot);
             return left;

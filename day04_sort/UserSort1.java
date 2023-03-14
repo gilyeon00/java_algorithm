@@ -41,7 +41,7 @@ class Person implements Comparable<Person> {
     }
 }
 
-public class userSort1 {
+public class UserSort1 {
     public static void main(String[] args) {
         ArrayList<Person> arr = new ArrayList<>();
         arr.add(new Person(25, 100));

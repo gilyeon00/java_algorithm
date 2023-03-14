@@ -41,5 +41,6 @@ public class SortMethod {
         Arrays.sort(arr5, Collections.reverseOrder());
         System.out.println(Arrays.toString(arr5));      // [5, 4, 3, 2, 1]
 
+
     }
 }

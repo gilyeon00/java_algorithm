@@ -21,19 +21,16 @@ public class BOJ1931_Greedy {
 
         // 두번째 인덱스 기준 정렬 - 종료시간이 빠른 순서
         Arrays.sort(reservation, (o1, o2) -> {
-            return o1[1]-o2[1];
+            if(o1[1] == o2[1]) return o1[0]-o2[0];
+            else return o1[1]-o2[1];
         });
 
         int cnt = 0;
-//        if (reservation.length == 1) {
-//            System.out.println(1);
-//            return;
-//        }
-        int start = reservation[0][1];
+        int end = 0;
         for (int i = 0; i < N; i++) {   // i는 필수로 들어갈때
-            if (reservation[i][0] >= start) {
+            if (reservation[i][0] >= end) {
                 cnt++;
-                start = reservation[i][1];
+                end = reservation[i][1];
             }
         }
 

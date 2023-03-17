@@ -25,6 +25,7 @@ public class BackTracking {
         }
         for (int i = startIndex; i < N; i++) {
             select[cnt] = arr[i];
+
             if (sum + select[cnt] <= target) { // 누적 합이 target 이하일 때만 다음 숫자 선택 (백트래킹)
                 backtracking(cnt+1, i+1, sum+select[cnt]);
             }

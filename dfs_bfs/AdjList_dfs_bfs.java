@@ -37,7 +37,14 @@ public class AdjList_dfs_bfs {
             adjList[from].add(to);
         }
 
+        System.out.print("BFS : ");
         bfs(0);
+
+        System.out.println();
+        visited = new boolean[N];
+
+        System.out.print("DFS : ");
+        dfs(0);
 
     }
 
@@ -62,6 +69,17 @@ public class AdjList_dfs_bfs {
                 }
             }
 
+        }
+    }
+
+    private static void dfs(int currnode) {
+        System.out.print(currnode + " ");
+
+        for (int node : adjList[currnode]) {
+            if (!visited[node]) {
+                visited[node] = true;
+                dfs(node);
+            }
         }
     }
 
